@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTT Platform - Home</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="navbar">
+        <div class="logo">
+            <img src="logo.png" alt="l">
+            <a href="index.html"> ONLY CINEMASS</a>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search..." id="search-input">
+        </div>
+        <!-- Toggle Button for Mobile View -->
+        <button id="menu-toggle" class="menu-toggle">☰</button>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="trending.html">Trending</a></li>
+                <li><a href="my-list.html">My List</a></li>
+                <li><a href="video-player.html?movie=1">Watch Movie</a></li>
+                <li><a href="profile.html   ">My Profile</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+        
+        <button id="theme-toggle" class="theme-toggle">🌙 Dark Mode</button>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <img src="images/banner.jpg" alt="Hero Banner">
+        <div class="hero-text">
+            <h1>CINEMALUU</h1>
+            <p>Catch the latest blockbuster!</p>
+            <button onclick="window.location.href='video-player.html?movie=1'">Watch Now</button>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories">
+        <h2>Recommended for You</h2>
+        <div class="carousel">
+            <a href="video-player.html?movie=1" class="carousel-item">
+                <img src="images/movie1.jpg" alt="Movie 1">
+                <p>FFF FEAR FOR FEAR</p>
+            </a>
+            <a href="video-player.html?movie=2" class="carousel-item">
+                <img src="images/movie2.png" alt="Movie 2">
+                <p>SATURDAY NOT ENOUGH</p>
+            </a>
+        </div>
+
+        <h2>Trending Now</h2>
+        <div class="carousel">
+            <a href="https://abn.bappam.market/bo-v1tvo/mathu-vadalara-2-2024-htu8k-telugu-movie-watch-online.html" class="carousel-item">
+                <img src="images/movie3.jpg" alt="Movie 3">
+                <p>GREED FOR WEEED</p>
+            </a>
+            <a href="https://vac.bappam.to/te-a2ftv/kalki-2898-ad-2024-hlu8b-telugu-movie-watch-online.html" class="carousel-item">
+                <img src="images/movie4.jpg" alt="Movie 4">
+                <p>DASAVATHAARAM</p>
+            </a>
+        </div>
+
+        <h2>New Releases</h2>
+        <div class="carousel">
+            <a href="https://res.bappam.to/te-a2ftv/sathyam-sundaram-2024-qs1cr-telugu-movie-watch-online.html" class="carousel-item">
+                <img src="images/movie5.jpg" alt="Movie 5"> 
+                <p> TRUE BEAUTY </p>
+            </a>
+            <a href="video-player.html?movie=6" class="carousel-item">
+                <img src="images/movie6.jpg" alt="Movie 6">  
+                <p> HUNTER </p>
+            </a>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

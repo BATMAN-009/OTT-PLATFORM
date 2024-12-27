@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTT Platform - Video Player</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <a href="index.html">CINEMALUU</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="profile.html">My Profile</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="video-player">
+        <video id="video" controls>
+            <source id="videoSource" src="" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <div class="video-controls">
+            <button class="rewind"><<</button>
+            <button class="play-pause">Play</button>
+            <button class="fast-forward">>></button>
+            <label for="playbackSpeed">Speed:</label>
+            <select id="playbackSpeed">
+                <option value="0.5">0.5x</option>
+                <option value="1" selected>1x</option>
+                <option value="1.5">1.5x</option>
+                <option value="2">2x</option>
+            </select>
+            <label for="volumeControl">Volume:</label>
+            <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="0.5">
+            <button class="fullscreen">Fullscreen</button>
+        </div>
+        <div class="video-info">
+            <h4 id="videoTitle">Title</h4>
+            <p id="videoGenre">Genre</p>
+            <p id="videoCast">Cast</p>
+            <p id="videoDuration">Duration</p>
+        </div>
+    </section>
+
+    <script>
+        // Get movie ID from URL and load the appropriate video
+        const urlParams = new URLSearchParams(window.location.search);
+        const movieId = urlParams.get('movie');
+        const videoElement = document.getElementById('video');
+        const videoSource = document.getElementById('videoSource');
+        const playButton = document.querySelector('.play-pause');
+
+        // Define movie details based on movieId
+        const movies = {
+            '1': {
+                src: 'video-player/SATURDAY NOT ENOUGH.mp4',
+                title: 'SATURDAY NOT ENOUGH',
+                genre: 'Love, Periodic',
+                cast: 'Mountains, Water, Trees',
+                duration: '1m 54s'
+            },
+            '2': {
+                src: 'video-player/GREED FOR WEEED.mp4',
+                title: 'Manjumal: The Hidden Mystery',
+                genre: 'Thriller, Mystery',
+                cast: 'John Doe, Jane Doe',
+                duration: '2m 10s'
+            }
+            // Add more movie details as needed
+        };
+
+        if (movies[movieId]) {
+            videoSource.src = movies[movieId].src;
+            document.getElementById('videoTitle').textContent = movies[movieId].title;
+            document.getElementById('videoGenre').textContent = `Genre: ${movies[movieId].genre}`;
+            document.getElementById('videoCast').textContent = `Cast: ${movies[movieId].cast}`;
+            document.getElementById('videoDuration').textContent = `Duration: ${movies[movieId].duration}`;
+            videoElement.load();
+        }
+
+        // Play/Pause Video
+        playButton.addEventListener('click', () => {
+            if (videoElement.paused) {
+                videoElement.play();
+                playButton.textContent = 'Pause';
+            } else {
+                videoElement.pause();
+                playButton.textContent = 'Play';
+            }
+        });
+    </script>
+</body>
+</html>
